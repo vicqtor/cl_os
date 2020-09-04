@@ -103,6 +103,3 @@ terminal_initialize();
 terminal_writestring("wellcome to my first operating system!");
 for(;;);
 }
-
-	
-Edit & Run
