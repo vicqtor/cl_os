@@ -1,2 +1,2 @@
-# simple_development_kernel
-simple kernel with c++
+# command-line-os
+command line os
