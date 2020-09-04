@@ -1,21 +1,7 @@
+iso/boot;
 nasm -f elf boot.asm -o boot.o
 g++ -c kernel.cpp -o kernel.o -ffreestandinng -fno-exceptions -fno-rtti
 gcc loader.o kernel.o -T linker.ld -o kern -nostdlib -nodefaultlibs -lgcc
 
-create image - grub-mkrescue:
-create directory: iso/boot/grub/grub.cfg 
-
- - menuentry "myOS" {multiboot /boot/kern}
-
-	
-
-then copy your kernel (kern) to iso/boot directory and run your shell again:
-switch to the main directory of your kernel and type:
-
- 
-
-	
-
+main dir
 grub-mkrescue iso --output=kern.iso
-
-	
