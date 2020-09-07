@@ -1,6 +1,6 @@
 ;boot.asm:
 [bits 32] ;we are in 32 bit
-global start ;start's the operating system:we call it in the linker script
+global start ;start's os:call in linker script
 extern _kernel_main ;this is in are .cpp file and it is the main function of are kernel
 ;do not modify these lines(these are needed by grub)!
 section .mbHeader
