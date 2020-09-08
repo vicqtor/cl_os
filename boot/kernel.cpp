@@ -1,7 +1,6 @@
-#include <stddef.h> //we can use it: it doesnt use any platform-related api functions
-#include <stdint.h> //include it to get int16_t and some integer types
+#include <stddef.h>
+#include <stdint.h> // int16_t, & integers
 
-/* Hardware text mode color constants. */
 enum vga_color
 {
 	COLOR_BLACK = 0,
@@ -100,6 +99,6 @@ void terminal_writestring(const char* data)
 void kernel_main()
 {
 terminal_initialize();
-terminal_writestring("wellcome to my first operating system!");
+terminal_writestring("welcome_message");
 for(;;);
 }
