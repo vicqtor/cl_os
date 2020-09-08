@@ -1,18 +1,13 @@
-/* The bootloader will look at this image and start execution at the symbol
-   designated as the entry point. */
+/* bootloader; check .image, start execution at symbol design as entry point. */
 ENTRY(start)
 
-/* Tell where the various sections of the object files will be put in the final
-   kernel image. */
+/* where sections object files will be */
 SECTIONS
 {
-	/* Begin putting sections at 1 MiB, a conventional place for kernels to be
-	   loaded at by the bootloader. */
+	/* Begin sections at 1 MiB, conventional, loaded by bootloader. */
 	. = 1M;
 
-	/* First put the multiboot header, as it is required to be put very early
-	   early in the image or the bootloader won't recognize the file format.
-	   Next we'll put the .text section. */
+	/* Fmultiboot header */
 	.text BLOCK(4K) : ALIGN(4K)
 	{
 		*(.mbHeader)
@@ -38,8 +33,6 @@ SECTIONS
 		*(.bss)
 	}
 
-	/* The compiler may produce other sections, by default it will put them in
-	   a segment with the same name. Simply add stuff here as needed. */
+	/* The compiler may produce other sections by compiler; same name segments */
+/* add stuff here as needed. */
 }
-
-	
