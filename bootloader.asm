@@ -1,17 +1,17 @@
 ;boot.asm:
-[bits 32] ;we are in 32 bit
-global start ;start's os:call in linker script
-extern _kernel_main ;this is in are .cpp file and it is the main function of are kernel
-;do not modify these lines(these are needed by grub)!
+[bits 32] ; 32 bit
+global start ;start's os, call in linker script
+extern _kernel_main ; in .cpp, kernel main function
+;do not modify
 section .mbHeader
 
 align 0x4
  
-; setting up the Multiboot header - see GRUB docs for details
+; Multiboot header
 MODULEALIGN equ  1<<0                   ; align loaded modules on page boundaries
 MEMINFO     equ  1<<1                   ; provide memory map
-FLAGS       equ  MODULEALIGN | MEMINFO  ; this is the Multiboot 'flag' field
-MAGIC       equ    0x1BADB002           ; 'magic number' lets bootloader find the header
+FLAGS       equ  MODULEALIGN | MEMINFO  ; Multiboot 'flag' field
+MAGIC       equ    0x1BADB002           ; 'magic number' bootloader finding header
 CHECKSUM    equ -(MAGIC + FLAGS)        ; checksum required
  
 MultiBootHeader:
@@ -19,7 +19,7 @@ MultiBootHeader:
    dd FLAGS
    dd CHECKSUM
  
-;you can modify these
+; modifyable
 start:
-push ebx ;this is optional and load's the grub structure
+push ebx ; optional, load's grub structure
 call _kernel_main
