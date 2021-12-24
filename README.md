@@ -1,7 +1,4 @@
-<h4 align = 'center'> cl_os
-    <br>
-    a simple command line operating system. for learning purposes
-</h4>
+<h4 align = 'center'> a simple command line operating system. for learning purposes </h4>
 <hr>
 <h4 align = 'left'> how to build
     <br>
